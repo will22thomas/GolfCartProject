@@ -1,0 +1,31 @@
+# This example demonstrates how to use LCM with the Python select module
+
+import select
+import lcm
+
+from lidar_package import item
+
+def my_handler(channel, data):
+    msg = item.decode(data)
+    print("Received message on channel \"%s\"" % channel)
+    print("   x2 coordinate: %s" % str(msg.x2Coordinate))
+    print("   y2 coordinate:    = %s" % str(msg.y2Coordinate))
+    print("   z2 coordinate:   = %s" % str(msg.z2Coordinate))
+    print("")
+    print("   timestamp:     = %s" % str(msg.timestamp))
+    print("   framecount     = %s" % str(msg.framecount))
+    print("")
+
+lc = lcm.LCM()
+lc.subscribe("DATA", my_handler)
+
+try:
+    timeout = 1.5  # amount of time to wait, in seconds
+    while True:
+        rfds, wfds, efds = select.select([lc.fileno()], [], [], timeout)
+        if rfds:
+            lc.handle()
+        else:
+            print("Waiting for message...")
+except KeyboardInterrupt:
+    pass

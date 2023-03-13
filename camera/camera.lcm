@@ -1,0 +1,11 @@
+package camera;
+
+// Live streaming data in an array over lcm
+
+struct camera_image_t {
+    string timestamp;
+    int64_t framecount;
+    
+    string camera_name;
+    jpeg.image_t jpeg_image;
+}
