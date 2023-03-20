@@ -15,11 +15,11 @@ lidar_package::item newItem(string timestamp, int64_t framecount)
     return item;
 }
 
+// GIT PAT FOR THIS PROJ: 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
 // Simple program to publish hardcoded message data using LCM
 // If the program is called without any command-line arguments it will publish a single item message
 // If anything is present as a command-line argument, a status message with five items will be published instead
-int main(int argc, char** argv)
-{
+int main(int argc, char** argv) {
     // Create LCM object and check that it was created successfully
     lcm::LCM lcm;
     if (!lcm.good()) {
