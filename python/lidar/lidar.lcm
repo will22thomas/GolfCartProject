@@ -1,0 +1,16 @@
+package lidar_package;
+
+// Live streaming data in an array over lcm
+
+struct item
+{
+    string timestamp;
+    int64_t framecount;
+
+    double x2Coordinate[3];
+    double y2Coordinate[3];
+    double z2Coordinate[3];
+
+    float coordinates[framecount][3];
+    int64_t intensity[framecount];
+}

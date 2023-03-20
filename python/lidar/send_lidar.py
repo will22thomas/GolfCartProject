@@ -243,11 +243,11 @@ def pcap_to_pcd(#source: client.PacketSource,
 def main():
     # stream_live_data("169.254.8.163", 7502)
     # plot_data_sample("169.254.8.163", 7502)
-    live_plot_reflectivity("169.254.8.163")
+    # live_plot_reflectivity("169.254.131.89")
     # sample_live_data("169.254.8.163")
 
     #stream_data_make_pcd("169.254.8.163", 7502)
-    #pcap_to_pcd("169.254.8.163", 7502)
+    pcap_to_pcd("169.254.131.89", 7502)
 
 if __name__ == "__main__":
     main()
