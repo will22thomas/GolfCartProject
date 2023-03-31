@@ -1,0 +1,10 @@
+Things done:
+Got Cameras to transfer jpeg images into Python
+
+
+TODO:
+Documentation
+Redo basically everything on development kit
+Make a list of packages installed in documentation
+Get jpeg images sending over lcm (Talk to Daniel Butterfield)
+Trim down LiDAR code
