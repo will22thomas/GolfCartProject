@@ -4,8 +4,13 @@ package camera;
 
 struct camera_image_t {
     string timestamp;
-    int64_t framecount;
-    
     string camera_name;
-    jpeg.image_t jpeg_image;
+    int64_t framecount;
+
+    int32_t width;
+    int32_t height;
+    int32_t row_stride;
+
+    int32_t size;
+    byte data[size];
 }
