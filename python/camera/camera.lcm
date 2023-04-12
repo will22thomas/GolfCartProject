@@ -9,7 +9,6 @@ struct camera_image_t {
 
     int32_t width;
     int32_t height;
-    int32_t row_stride;
 
     int32_t size;
     byte data[size];
